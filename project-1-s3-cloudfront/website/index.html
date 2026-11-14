@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="My AWS cloud learning journey - a static website hosted on Amazon S3 and delivered worldwide by Amazon CloudFront.">
+  <title>My AWS Cloud Journey</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <span class="logo">☁️ Cloud Journey</span>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Project 1 of 3 · Live on AWS</p>
+        <h1>Hi, I'm learning to build on <span class="highlight">AWS</span>.</h1>
+        <p class="lead">
+          This website is stored in a <strong>private Amazon S3 bucket</strong> and delivered to you
+          over <strong>HTTPS</strong> by <strong>Amazon CloudFront</strong>, a global content delivery network.
+        </p>
+        <!-- CHANGE THIS VERSION NUMBER when you practise redeploying (Step 11 of the guide) -->
+        <p class="version-badge">Site version: <span id="site-version">v1.0</span></p>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About me</h2>
+        <p>
+          I'm a backend developer learning AWS from absolute zero by building real projects.
+          Instead of only watching tutorials, I deploy, test, break and fix real cloud infrastructure.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <h2>My AWS projects</h2>
+        <div class="cards">
+          <article class="card done">
+            <span class="status">Live</span>
+            <h3>1. Static website</h3>
+            <p>Amazon S3 + CloudFront + Origin Access Control. You are looking at it right now.</p>
+          </article>
+          <article class="card">
+            <span class="status">Next</span>
+            <h3>2. EC2 web server</h3>
+            <p>A Linux virtual machine on Amazon EC2 running the Nginx web server.</p>
+          </article>
+          <article class="card">
+            <span class="status">Planned</span>
+            <h3>3. Serverless REST API</h3>
+            <p>A Student Management CRUD API built with AWS Lambda + Amazon API Gateway.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE SECTION -->
+    <section id="architecture" class="section">
+      <div class="container">
+        <h2>How this page reached you</h2>
+        <ol class="flow">
+          <li><strong>Your browser</strong> asked for this page over HTTPS.</li>
+          <li><strong>CloudFront</strong> answered from the edge location nearest to you.</li>
+          <li>If the edge did not have a copy yet, CloudFront fetched it from <strong>S3</strong>
+              using a signed request (Origin Access Control).</li>
+          <li>The <strong>S3 bucket</strong> stays private - nobody can read it directly.</li>
+        </ol>
+        <p class="hint">Your local time when this page loaded: <span id="load-time">-</span></p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Find my project code on GitHub. (Add your own GitHub profile link here.)</p>
+        <button id="greet-btn" class="btn" type="button">Say hello 👋</button>
+        <p id="greet-msg" class="hint" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Hosted on Amazon S3 · Delivered by Amazon CloudFront · &copy; <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
